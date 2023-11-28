@@ -1,0 +1,23 @@
+{
+    "name": "1 Row x 3 Col for Desktop, 3 Row x 1 Col for Mobile/Tablet",
+    "description": "This is a layout component of 1 row by 3 columns for desktop and 3 rows by 1 column for mobile and table.",
+    "group": "commerce_layouts",
+    "attribute_definition_groups": [],
+    "region_definitions": [
+        {
+            "id":"firstColumn",
+            "name":"Column 1",
+            "component_type_exclusions": []
+        },
+        {
+            "id":"secondColumn",
+            "name":"Column 2",
+            "component_type_exclusions": []
+        },
+        {
+            "id":"thirdColumn",
+            "name":"Column 3",
+            "component_type_exclusions": []
+        }
+    ]
+}
