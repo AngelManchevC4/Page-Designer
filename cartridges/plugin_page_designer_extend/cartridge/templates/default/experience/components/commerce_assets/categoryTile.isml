@@ -1,0 +1,39 @@
+<div class="row">
+
+    <div class="col-12 d-flex justify-content-center text-center mt-2 overflow-hidden ${pdict.categoryPosition == 'top' ? "flex-column-reverse" : "flex-column"}">
+
+        <div class="w-100 m-auto">
+            <figure>
+                <a href="${pdict.categoryID}">
+                    <picture>
+                            <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)"/>
+                            <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)"/>
+                            <img
+                                class="photo-tile-image image-fluid w-100"
+                                src="${pdict.image.src.mobile}"
+                                style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY}"
+                                <isif condition="${pdict.image.alt}">alt="${pdict.image.alt}" title="${pdict.image.alt}"</isif>
+                            />
+                    </picture>
+                </a>
+            </figure>
+        </div>
+
+        <div>
+            <div class="text-center">
+                <a href="${pdict.categoryID}">
+                    <h3><isprint value="${pdict.categoryTitle}" encoding="off" /></h3>
+                </a>
+            </div>
+
+            <div class="text-center">
+                <a href="${pdict.categoryID}">
+                    <p class="text-wrap"><isprint value="${pdict.categoryDescription}" encoding="off" /></p>
+                </a>
+        </div>
+
+        </div>
+
+    </div>
+
+</div>
