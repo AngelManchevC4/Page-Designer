@@ -17,12 +17,9 @@ module.exports.render = function (context, modelIn) {
 
     model = carouselBuilder.init(model, context);
 
-    var test = model;
-
-    // instruct 24 hours relative pagecache
-    // var expires = new Date();
-    // expires.setDate(expires.getDate() + 1); // this handles overflow automatically
-    // response.setExpires(expires);
+    var expires = new Date();
+    expires.setDate(expires.getDate() + 1);
+    response.setExpires(expires);
 
     return new Template('experience/components/commerce_layouts/carouselTile').render(model).text;
 };

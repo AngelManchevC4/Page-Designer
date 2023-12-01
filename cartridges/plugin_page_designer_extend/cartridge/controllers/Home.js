@@ -21,19 +21,21 @@ const pageMetaData = require("*/cartridge/scripts/middleware/pageMetaData");
  * @param {renders} - isml
  * @param {serverfunction} - append
  */
-server.append(
+server.replace(
     "Show",
     function (req, res, next) {
         const Site = require("dw/system/Site");
         const PageMgr = require("dw/experience/PageMgr");
         const pageMetaHelper = require("*/cartridge/scripts/helpers/pageMetaHelper");
 
+        var pageDesignerPageID = Site.getCurrent().getPreferences().custom.pageDesignerPageID;
+
         pageMetaHelper.setPageMetaTags(req.pageMetaData, Site.current);
 
-        const page = PageMgr.getPage("page-designer-example");
+        const page = PageMgr.getPage(pageDesignerPageID);
 
         if (page && page.isVisible()) {
-            res.page("page-designer-example");
+            res.page(pageDesignerPageID);
         } else {
             res.render("home/homePage");
         }

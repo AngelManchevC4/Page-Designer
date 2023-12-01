@@ -25,9 +25,8 @@ module.exports.render = function (context, modelIn) {
     model.categoryTitle = categoryLinkName;
     model.categoryPosition = categoryLinkPosition;
 
-    // instruct 24 hours relative pagecache
     var expires = new Date();
-    expires.setDate(expires.getDate() + 1); // this handles overflow automatically
+    expires.setDate(expires.getDate() + 1);
     response.setExpires(expires);
 
     return new Template('experience/components/commerce_assets/categoryTile').render(model).text;
